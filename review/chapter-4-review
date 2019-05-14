@@ -1,0 +1,203 @@
+<?php
+//4-10.php
+
+foreach( $meal as $dish => $price ) {
+$meal[ $dish ] = $meal[ $dish] * 2;
+}
+foreach ( $meal as $dish => $price ) {
+	printf( "The new price of %s is \$%.2f.\n", $dish, $price );
+	echo "<br>";
+}
+
+//4-11.php
+foreach ( $dinner as $dish ) {
+
+//4-13.php
+for ( $i = 0, $num_dishes = count( $dinner ); $i < $num_dishes; $i++ ) {
+	print '<tr class="' . $row_styles[ $i % 2 ] . '">';
+	print "<td> Element $i </td> <td> $dinner[ $i ] </td></tr>\n";
+}
+
+//4-14.php
+for ( $i = 0, $num_letters = count( $letters ); $i < $num_letters; $i++ ) {
+	print $letters[ $i ];
+}
+
+//4-28.php
+$meals = array(
+	'breakfast' => ['Walnut Bun', 'Coffee'],
+	'lunch' => ['Cashew Nuts', 'White Mushrooms'],
+	'snack' => ['Dried Mulberries', 'Salted Sesame Crab']
+);
+$lunches = [
+	['Chicken', 'Eggplant', 'Rice'],
+	['Beef', 'Scallions', 'Noodles'],
+	['Eggplant', 'Tofu']
+];
+$flavors = array(
+	'Japanese' => array(
+		'hot' => 'wasabi',
+		'salty' => 'soy sauce'
+	),
+	'Chinese' => array(
+		'hot' => 'mustard',
+		'pepper-salty' => 'prickly ash'
+	)
+);
+
+//4-30.php
+$prices['dinner']['total'] = $prices['dinner']['Sweet Corn and Asparagus']+ $prices['dinner']['Braised Bamboo Fungus'];
+
+//4-32.php
+$specials = array(
+	array(
+		'Chestnut Bun',
+		'Walnut Bun',
+		'Peanut Bun'
+	),
+	array(
+		'Chestnut Salad',
+		'Walnut Salad',
+		'Peanut Salad'
+	)
+);
+for ( $i = 0, $num_specials = count( $specials ); $i < $num_specials; $i++ ) { // $num_sub is 3: the number of elements in each subarray
+	for ( $m = 0, $num_sub = count( $specials[ $i ] ); $m < $num_sub; $m++ ) {
+		print "Element [$i][$m] is " . $specials[ $i ][ $m ] . "\n";
+	}
+	print "<br>";
+}
+
+//4-8.php
+$meal = array(
+	'breakfast' => 'Walnut Bun',
+	'lunch' => 'Cashew Nuts and White Mushrooms',
+	'snack' => 'Dried Mulberries',
+	'dinner' => 'Eggplant with Chill Sauce'
+);
+print "<table>\n";
+foreach ( $meal as $key => $value ) {
+	print "<tr><td> $key </td><td> $value </td></tr>\n";
+}
+//4-9.php
+$row_styles = array( 'even', 'odd' );
+$style_index = 0;
+$meal = array(
+	'breakfast' => 'Walnut Bun',
+	'lunch' => 'Cashew Nuts and White Mushrooms',
+	'snack' => 'Dried Mulberries',
+	'dinner' => 'Eggplant with chill suace'
+);
+print "<table>\n";
+foreach( $meal as $key => $value ) {
+	print '<tr class=' . $row_styles[ $style_index ] . '">';
+	print "<td> $key </td><td> $value </td></tr>\n";
+	$style_index = 1 - $style_index;
+}
+print '</table>';
+
+//ex4_2.php
+$cities = array(
+	'New York' => 8175133,
+	'Los Angeles' => 3792621,
+	'Chicago' => 2695598,
+	'Houston' => 2100263,
+	'Philadelphia' => 1526006,
+	'Phoenix' => 1445632,
+	'San Antonio' => 1327407,
+	'San Diego' => 1307402,
+	'Dallas' => 1197816,
+	'San Jose' => 945942
+);
+
+//ex4_3.php
+$state_totals = array();
+foreach ( $USA as $city_info ) {
+	$total += $city_info[2];
+	if ( ! array_key_exists( $city_info[1], $state_totals ) ) {
+		$state_totals[ $city_info[1] ] = 0;
+	}
+	$state_totals[ $city_info[1] ] += $city_info[2];
+	print "<tr><td>$city_info[0], $city_info[1]</td><td>$city_info[2]</td></tr>\n";
+}
+print "<tr><td>Total</td><td>$total</td></tr>\n"; 
+foreach ( $state_totals as $state => $population ) {
+	print "<tr><td>$state</td><td>$population</td></tr>\n";
+}
+print "</table>";
+
+//ex4_4.php
+$students = [
+	'Hsu Htet Aung' => [
+		'grade' => 'A+',
+		'id' => 27],
+	'Myat Hsu Mon' => [
+		'grade' => 'A', 
+		'id'  => 8]
+	];
+$inventory = [
+	'pencil' => 5,
+	'book' => 3,
+	'Calendar' => 3,
+	'Note' => 0
+];
+$lunches = [
+	'Monday' => [
+		'cost' => 1.50,
+		'entree' => 'Chocolate cake',
+		'side' => 'Cheese Cake',
+		'drink'  => 'Black Tea' ],
+	'Tuesday' => [
+		'cost' => 2.50,
+		'entree' => 'Solomo Fish',
+		'side' => 'PanCake',
+		'drink'  => 'Black Tea'],
+	'Wednesday' => [
+		'cost' => 2.00,
+		'entree' => 'Salad',
+		'side' => 'Cup Cake',
+		'drink' => 'Green Tea'],
+	'Thursday' => [ 'cost'   => 1.35,
+		'entree' => 'Stir-fried Two Winters',
+		'side' => 'Egg Puff',
+		'drink' => 'Black Tea'],
+	'Friday' => [ 'cost'   => 3.25,
+		'entree' => 'Stewed Pork with Taro',
+		'side' => 'Duck Feet',
+		'drink' => 'Jasmine Tea']
+];
+$family = ['Win', 'Khin', 'Mon', 'Thaw', 'Phyo'];
+$family = [
+	'Win' => [
+		'age' => 58,
+		'relation' => 'father'],
+	'Khin' => [
+		'age' => 55,
+		'relation' => 'mother'],
+	'Mon' => [
+		'age' => 27,
+		'relation' => 'sister'],
+	'Thaw' => [
+		'age' => 2,
+		'relation' => 'mother'],
+	'Phyo' => [
+		'age' => 31,
+		'relation' => '']
+];
+
+//multipleExpression.php
+print '<select name="doughnuts">';
+for( $min=1, $max=10; $min < 50; $min += 10, $max += 10 ) {
+	print "<option>$min - $max</option>\n";
+}
+print '</select>';
+
+//printMenu.php
+$i=1;
+print '<select name="people">';
+while ( $i <= 10 ) {
+	print "<option>$i</option>\n";
+	$i++;
+}
+print '</select>';
+?>
