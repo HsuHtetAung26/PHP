@@ -1,8 +1,8 @@
 <?php
 $meals = array(
 	'breakfast' => ['Walnut Bun', 'Coffee'],
-	'lunch' => ['Cashew Nuts','White Mushrooms'],
-	'snack' => ['Dried Mulberries','Salted Sesame Crab']
+	'lunch' => ['Cashew Nuts', 'White Mushrooms'],
+	'snack' => ['Dried Mulberries', 'Salted Sesame Crab']
 );
 $lunches = [['Chicken', 'Eggplant', 'Rice'],
 		['Beef', 'Scallions', 'Noodles'],

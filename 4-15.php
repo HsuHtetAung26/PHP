@@ -1,4 +1,3 @@
-
 <?php
 $meals = array(
 	'Walnut Bun' => 1,

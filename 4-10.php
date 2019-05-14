@@ -14,5 +14,5 @@ printf(
 $dish, $price
 );
 echo "<br>";
-			}
+}
 ?>
