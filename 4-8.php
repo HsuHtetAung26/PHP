@@ -1,11 +1,13 @@
 <?php
-$meal= array('breakfast' => 'Walnut Bun',
-			 'lunch' => 'Cashew Nuts and White Mushrooms',
-			 'snack' => 'Dried Mulberries',
-			 'dinner' => 'Eggplant with Chill Sauce');
+$meal = array(
+	  'breakfast' => 'Walnut Bun',
+	  'lunch' => 'Cashew Nuts and White Mushrooms',
+	  'snack' => 'Dried Mulberries',
+	  'dinner' => 'Eggplant with Chill Sauce'
+);
 print "<table>\n";
-foreach ($meal as $key => $value)
+foreach ( $meal as $key => $value )
 {
-	print "<tr><td>$key</td><td>$value</td></tr>\n";
+	print "<tr><td> $key </td><td> $value </td></tr>\n";
 }
 print '</table>';
