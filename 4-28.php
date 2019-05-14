@@ -1,18 +1,23 @@
 <?php
 $meals = array(
-	'breakfast' => ['Walnut Bun', 'Coffee'],
-	'lunch' => ['Cashew Nuts', 'White Mushrooms'],
-	'snack' => ['Dried Mulberries', 'Salted Sesame Crab']
+		'breakfast' => ['Walnut Bun', 'Coffee'],
+		'lunch' => ['Cashew Nuts', 'White Mushrooms'],
+		'snack' => ['Dried Mulberries', 'Salted Sesame Crab']
 );
-$lunches = [['Chicken', 'Eggplant', 'Rice'],
+$lunches = [
+		['Chicken', 'Eggplant', 'Rice'],
 		['Beef', 'Scallions', 'Noodles'],
-		['Eggplant', 'Tofu']];
+		['Eggplant', 'Tofu']
+];
 $flavors = array(
-	'Japanese' => array(
+		'Japanese' => array(
 				'hot' => 'wasabi',
-		'		salty' => 'soy sauce'),
-	'Chinese' => array(
-				'hot' => 'mustard', 'pepper-salty' => 'prickly ash')
+				'salty' => 'soy sauce'
+		),
+		'Chinese' => array(
+				'hot' => 'mustard', 
+				'pepper-salty' => 'prickly ash'
+		)
 );
 print $meals['lunch'][1];
 print "<br>";

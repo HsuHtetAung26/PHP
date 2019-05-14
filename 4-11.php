@@ -5,7 +5,7 @@ $dinner = array(
 	'Lemon Chicken',
 	'Braised Bamboo Fungus'
 );
-foreach ( $dinner as $dish ){
+foreach ( $dinner as $dish ) {
 print "You can eat: $dish";
 print "<br>";
 }
