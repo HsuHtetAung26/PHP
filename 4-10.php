@@ -6,10 +6,10 @@ $meal = array(
 	'Eggplant with Chill Sauce' => 6.50
 );
 foreach( $meal as $dish => $price ) {
-$meal[ $dish ] = $meal[ $dish ] * 2;
+	$meal[ $dish ] = $meal[ $dish ] * 2;
 }
 foreach ( $meal as $dish => $price ) {
-printf( "The new price of %s is \$%.2f.\n", $dish, $price );
-echo "<br>";
+	printf( "The new price of %s is \$%.2f.\n", $dish, $price );
+	echo "<br>";
 }
 ?>

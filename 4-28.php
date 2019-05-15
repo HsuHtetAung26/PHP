@@ -10,14 +10,14 @@ $lunches = [
 		['Eggplant', 'Tofu']
 ];
 $flavors = array(
-		'Japanese' => array(
-				'hot' => 'wasabi',
-				'salty' => 'soy sauce'
-		),
-		'Chinese' => array(
-				'hot' => 'mustard', 
-				'pepper-salty' => 'prickly ash'
-		)
+	'Japanese' => array(
+			'hot' => 'wasabi',
+			'salty' => 'soy sauce'
+	),
+	'Chinese' => array(
+			'hot' => 'mustard', 
+			'pepper-salty' => 'prickly ash'
+	)
 );
 print $meals['lunch'][1];
 print "<br>";
