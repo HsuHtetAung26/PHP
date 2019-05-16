@@ -1,0 +1,120 @@
+<?php
+// remove unnecessary space like ; and { 
+// glogal variable comment eg.  * @global array $dacana_csv_data
+//PHP file use ''
+
+//5_20.php
+/**
+ * print a local variable within the function.
+ */
+function vegetarian_dinner() {
+	print 'Dinner is $dinner, or ';
+	$dinner = 'Sauteed Pea Shoots';
+	print $dinner;
+	print '<br>';
+}
+
+/**
+ * print a local variable within the function.
+ */
+function kosher_dinner() {
+	print 'Dinner is $dinner, or ';
+	$dinner = 'Kung Pao Chickern';
+	print $dinner;
+	print '<br>';
+}
+print 'Vegetarian ';
+vegetarian_dinner();
+print 'Kosher ';
+kosher_dinner();
+print 'Regular dinner is $dinner';
+
+//5_21.php
+$dinner = 'Curry Cuttlefish';
+/** 
+ * print local and global variables
+ */
+function macrobiotic_dinner() {
+	$dinner = 'Some Vegetables';
+	print 'Dinner is ' . $dinner;
+	print ' but I&#039;d rather have ';
+	print $GLOBALS['dinner'];
+	print '<br>';
+}
+macrobiotic_dinner();
+print 'Regular dinner is:' . $dinner;
+
+//5_23.php
+$dinner = 'Curry Cuttlefish';
+/**
+ * Print local and global variables.
+ * @global string $dinner
+ */
+function vegetarian_dinner() {
+	global $dinner;
+	print 'Dinner was $dinner, but now it&#039;s ';
+	$dinner = 'Sauteed Pea Shoots.';
+	print $dinner;
+	print '<br>';
+}
+print 'Regular Dinner is $dinner.';
+print '<br>';
+vegetarian_dinner();
+print 'Regular dinner is $dinner';
+print '<br>';
+
+//5_24.php
+/**
+ * Print the series of countdown.
+ * @param int $top
+ */
+function countdown( int $top ) {
+	while ( $top > 0 ) {
+		print '$top..';
+		$top--;
+	}
+	print 'boom!\n';
+}
+$counter = 5;
+countdown( $counter );
+print ' Now, counter is $counter ';
+
+//5_25.php
+/**
+ * Calculate amount of the meal.
+ * @param float $meal, $tax, $tip
+ * @return float $total_amount
+ */
+function restaurant_check( $meal, $tax, $tip ) : float {
+	$tax_amount = $meal * ( $tax / 100 );
+	$tip_amount = $meal * ( $tip / 100 );
+	$total_amount = $meal + $tax_amount + $tip_amount;
+	return $total_amount;
+}
+
+//5_5.php
+/**
+ * Set the background color
+ * @param string $color
+ */
+function page_header3( $color = 'cc3399' ) {
+	print '<html><head><title>Welcome to my site</title></head>';
+	print '<body bgcolor='#' . $color . ''>';
+}
+page_header3();
+
+//5_8.php
+/** 
+ * Set background color.
+ * @param string $color, $title, $header
+ */
+function page_header5( $color, $title, $header = 'Welcome' ) { 
+	print '<html><head><title>Welcome to ' . $title . '</title></head>';
+	print '<body bgcolor='#' . $color . ''>';
+	print '<h1>$header</h1>';
+}
+page_header5( '66cc99', 'my wonderful page' );
+page_header5( '66cc99', 'my wonderful page', 'This page is great' );
+
+?>
+
