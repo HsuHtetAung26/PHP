@@ -1,0 +1,111 @@
+//this is wrong comment format
+/**
+  * assign ingredients.
+  * @param string $ingredient
+ */
+
+//this is the standard comment format
+/**
+ * assign ingredients.
+ * @param string $ingredient
+ */
+
+//add space
+$sandwich->ingredients = array( 'chicken', 'bread');
+
+//use meamingful variable name $ing -> $ingredients
+foreach( ['chicken', 'lemon', 'bread', 'water'] as $ing ) {
+
+//php use ''
+print "Soup contains $ing.";
+
+//add return type in_array return boolean
+/**
+ * check input ingredients
+ * @param string $ingredient
+ * @return boolean
+ */
+public function hasIngredients( $ingredient ) {
+	return in_array( $ingredient, $this->ingredients );
+}
+
+//add return type
+/**
+ * check input ingredients
+ * @param string $ingredient
+ * @return boolean
+ */
+public function hasIngredients( $ingredient ) {
+	foreach( $this->ingredients as $entree ) {
+		if( $entree->hasIngredients( $ingredient ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+//add new line at the end of php file ?>
+<?php
+class IngredientCost {
+	public $name;
+	public $cost;
+	/** 
+	  * assign name and cost.
+	  * @param string $name, $cost
+	  */
+	public function __construct( $name, $cost ) {
+	$this->name = $name;
+	$this->cost = $cost;
+	}
+	/**
+	  * set cost.
+	  */
+	public function setCost( $cost ) {
+		$this->cost = $cost;
+	}
+
+}
+?>
+
+
+//wrong return type and remove unnecessary space
+/**
+ * return int
+ */
+public static function getSizes() {
+	return array( 'small', 'medium', 'large' );
+}
+
+//need tab at ex6-1.php and ex6-2.php and also remove unnecessary space
+public function __construct( $name, $cost ) {
+$this->name = $name;
+$this->cost = $cost;
+} 
+
+//remove unnecessary new line at ex6-2.php
+
+//wrong format for parent::__construct
+//check the reference https://www.php.net/manual/en/language.oop5.decon.php
+//remove unnecessary new line
+public function __construct ( $name, $ingredients );
+	parent::__construct( $name, $ingredients ) {
+	foreach( $this->ingredients as $ingredient ) {
+		if ( ! $ingredient instanceof Ingredient ) {
+		throw new Exception( 'Elements of $ingredients must be ingredient objects' );
+		}
+
+	}
+}
+
+//wrong return comment
+/**
+ * get cost
+ * return int $cost.
+ */
+public function getCost() {
+	$cost = 0;
+	foreach ( $this->ingredients as $ingredient ) {
+		$cost += $ingredient->getCost();
+	}
+	return $cost;
+}
