@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ( $_POST['username'] == "testuser" && $_POST['password'] == "1234" ) {
+if ( $_POST['username'] == 'testuser' && $_POST['password'] == '1234' ) {
 	$_SESSION['user'] = $_POST['username'];
 	echo 'Successful Validation';
 } else {
