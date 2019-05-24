@@ -1,0 +1,76 @@
+//8-14.php
+ob_start();
+print 'I have not decided if I want to send a cookie yet.';
+print '<br>';
+setcookie( 'heron', 'great blue' );
+print 'Yes, sending that cookie was the right decision.';
+
+//check.php
+	setcookie( 'login', $_POST['username'] . ',' . md5( $_POST['username'].$secret_word ) );
+/**
+ * function deftination
+ * @param string $user, $pass
+ * @return boolean
+ */
+function validate( $user, $pass ) {
+	$users = array(
+		'hsu' => 'fadj&32',
+		'htet' => '8HEj838'
+	);
+	if ( isset( $users[ $user ] ) && ( $users[ $user ] === $pass ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+	if ( md5( $c_username.$secret_word ) == $cookie_hash ) {
+
+print 'You have sent a bad cookie.';
+
+if ( isset( $username ) ) {
+	print 'Welcome, $username.';
+} else {
+	print 'Welcome, anonymous user.';
+}
+
+//cookie_three.php
+setcookie( 'test_cookie', 'test', time() + 3600, '/' );
+if ( count( $_COOKIE ) > 0 ) {
+	echo 'Cookies are enabled.';
+} else {
+	echo 'Cookies are disabled.';
+}
+
+//cookie_two.php
+setcookie( 'user', 'sts', time() - 3600 );
+echo 'Cookie 'user' is deleted.';
+
+//ddd.php
+<html>
+	<form method="POST" action="check.php">
+		Username: <input type="text" name="username"> <br>
+		Password: <input type="password" name="password"> <br>
+		<input type="submit" value="Log In">
+	</form>
+</html>
+
+//login.php
+<html>
+	<body>
+		<form action="/validate.php" method="POST">
+			Username: <input type="text" name="username"> <br>
+			Password: <input type="password" name="password"> <br>
+			<input type="submit" value="Log In">
+		</form>
+	</body>
+</html>
+
+//session_one.php
+$_SESSION['favcolor'] = 'green';
+$_SESSION['favanimal'] = 'cat';
+echo 'Session variables are set.<br>';
+echo 'Favorite color is ' . $_SESSION['favcolor'] . '.<br>';
+echo 'Favorite animal is ' . $_SESSION['favanimal'] . '.';
+
+//validate.php
+if ( $_POST['username'] == 'testuser' && $_POST['password'] == '1234' ) {
