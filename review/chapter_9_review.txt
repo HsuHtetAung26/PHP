@@ -1,0 +1,252 @@
+//9-10.php
+echo '<select name="food"> <br>';
+	echo '<option>$choice</option><br>';
+	echo 'You must select a valid choice.';
+
+//9-12.php
+<form method="post" action="<?php echo htmlspecialchars( $_SERVER['PHP_SELF'] );?>">
+	<input type="radio" name="food" value="eggs"/> EggBenedict
+	<input type="radio" name="food" value="toast"/> Buttered Toast with Jam
+	<input type="radio" name="food" value="coffee"/> Piping Hot Coffee 
+	<input type="radio" name="food" value="tea"/> Lemon Tea
+	<input type="submit" name="Submit">
+</form>
+
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+
+//9-15.php
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+
+//9-20.php
+<?php
+if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
+?>
+<form method="post" action="<?php echo htmlentities( $_SERVER['SCRIPT_NAME'] ) ?>"
+	enctype="multipart/form-data">
+	<input type="file" name="document"/>
+	<input type="submit" value="Send File"/>
+</form>
+<?php
+} else {
+	if ( isset( $_FILES['document'] ) && ( $_FILES['document']['error'] == UPLOAD_ERR_OK ) ) {
+		$newPath = '/tmp/' . basename( $_FILES['document']['name'] );
+		if ( move_uploaded_file( $_FILES['document']['tmp_name'], $newPath ) ) {
+			print 'File saved in' . $newPath;
+		} else {
+			print 'Couldn't move file to' . $newPath;
+		}
+	} else {
+		print 'No valid file uploaded.';
+	}
+}
+
+//9-22.php
+$defaults = array(
+	'name' => '',
+	'age' => '',
+	'flavor' => array()
+);
+
+
+//9-28.php
+<form method="post" action="<?php echo htmlspecialchars( $_SERVER['PHP_SELF'] );?>">
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+
+//9-3.php
+} else {
+	echo 'Hello, ' . $_POST['first_name'] . '!';
+}
+
+//9-30.php
+<?php
+$options = array();
+$when = new DateTime();
+$options[ $when->getTimestamp() ] = $when->format( 'D, F j, Y' );
+$when->modify( '+1 day' );
+	}//where is open {
+foreach ( $options as $value => $label ) {
+	print '<option value="$value">$label</option>\n';
+}
+?>
+
+//9-5.php
+<form method="post">
+	What is your favourite ice cream flavor?
+	<input type="text" name="flavor" />
+	<br><br>
+	What is your favourite color?
+	<input type="text" name="color" />
+	<br>
+	<input type="submit" value="Submit" />
+</form>
+
+//9-6.php
+<form method="post">
+	How old are you? <input type="text" name="age"/>
+	Cost<input type="text" name="price"/>
+	<input type="submit" name="submit"/>
+</form>
+<?php
+$age = filter_input( INPUT_POST, 'age', FILTER_VALIDATE_INT );
+if ( $age === false ) {
+	print 'Submitted age is invalid.';
+}
+$price = filter_input( INPUT_POST, 'price', FILTER_VALIDATE_FLOAT );
+if ( $price === false ) {
+	print 'Submitted price is invalid.';
+}
+
+//9-7.php
+<form method="post" action="<?php echo htmlspecialchars( $_SERVER['PHP_SELF'] );?>">
+	<select name='food'>
+		<option value="Eggs" name="egg">Eggs</option>
+		<option value="Toast""name="toast">Toast</option>
+		<option value="Coffee" name="coffee">Coffee</option>
+		<option value="bread" name="bread">Bread</option>
+	</select>
+	<input type="submit" name="Submit">
+</form>
+<?php
+$choices = array( 'Eggs', 'Toast', 'Coffee' );
+if( $_SERVER['REQUEST_METHOD'] == 'POST') {
+	if ( ! in_array( $_POST['food'], $choices ) ) {
+		echo 'You must select a valid choice.';
+	} else {
+		echo 'Your food is available';
+	}
+}
+?>
+
+//9_30.php
+for( $i=0; $i < 7; ++$i ) {
+	$options[ $when->getTimestamp() ] = $when->format( 'D, F j, Y' );
+	$when->modify( '+1 day' );
+}
+foreach ( $options as $value => $label ) {
+	print '<option value="$value">$label</option>\n';
+}
+
+//creditValidate.php
+<?php
+/**
+ * verify credit card number
+ * @param string $s
+ * @return int $sum
+ */
+function is_valid_credit_card( $s ) {
+	$s = strrev( preg_replace( '/[^\d]/', '', $s ) );
+	$sum = 0;
+	for ( $i = 0, $j = strlen( $s ); $i < $j; $i++ ) {
+		if ( ( $i % 2 ) == 0 ) {
+			$val = $s[ $i ];
+		} else {
+			if( $val > 9 ) {
+				$val -= 9;
+			}
+		}
+		$sum += $val;
+	}
+	return ( ( $sum % 10 ) == 0 );
+}
+if ( ! is_valid_credit_card( $_POST['credit_card'] ) ) {
+	print 'Sorry, that card number is invalid.';
+} else {
+	print 'Validation is sucessful';
+}
+?>
+
+//show_form.php
+<form action='<?php echo htmlentities( $_SERVER['SCRIPT_NAME'] ) ?>' method='post'>
+    <dl>
+        <dt>Your Name:</dt>
+        <?php if ( isset( $errors['name'] ) ) { ?>
+        <dd class="error"><?= htmlentities( $errors['name'] ) ?></dd>
+        <?php } ?>
+        <dd><input type="text" name="name" value="<?php echo htmlentities( $defaults['name'] ) ?>"/></dd>
+        <dt>Are you over 18 years old?</dt>
+        <?php if ( isset( $errors['age'] ) ) { ?>
+        <dd class="error"><?php echo htmlentities( $errors['age'] ) ?></dd>
+        <?php } ?>
+        <dd><input type="checkbox" name="age" value="1" <?php  print $defaults['age'] ?>/> Yes </dd>
+        <dt>Your favorite ice cream flavor:</dt>
+        <?php if ( isset( $errors['flavor'] ) ) { ?>
+        <dd class="error"><?php echo htmlentities( $errors['flavor'] )  ?></dd>
+        <?php } ?>
+        <dd>
+            <select name='flavor'>
+        <?php foreach ( $flavors as $flavor ) { ?>
+            <option <?php echo isset( $defaults['flavor'][ $flavor ]) ?$defaults['flavor'][ $flavor ] :"" ?>>
+        <?php echo htmlentities($flavor) ?></option>
+        <?php } ?>
+            </select></dd>
+    </dl>
+    <input type="submit" value="Send Info"/>
+</form>
+
+//stage1.php
+<form action="<?= htmlentities( $_SERVER["SCRIPT_NAME"] ) ?>" method="post">
+    Name: <input type="text" name="name"/> <br/>
+    Age:  <input type="text" name="age"/> <br/>
+    <input type="hidden" name="stage" value="<?= $stage + 1 ?>"/>
+    <input type="submit" value="Next"/>
+</form>
+
+//stage.php
+<?php
+session_start();
+if ( ( $_SERVER['REQUEST_METHOD'] == 'GET' ) || ( ! isset( $_POST['stage'] ) ) ) {
+	$stage = 1;
+} else {
+	$stage = (int) $_POST['stage'];
+}
+	$stage = max( $stage, 1 );
+	$stage = min( $stage, 3 );
+if ( $stage > 1 ) {
+	foreach ($_POST as $key => $value ) {
+		$_SESSION[ $key ] = $value;
+	}
+}
+include __DIR__ . "/stage$stage.php";
+?>
+
+//stage2.php
+<form action="<?= htmlentities( $_SERVER["SCRIPT_NAME"] ) ?>" method="post">
+    Favorite Color: <input type="text" name="color"/> <br/>
+    Favorite Food:  <input type="text" name="food"/> <br/>
+    <input type="hidden" name="stage" value="<?= $stage + 1 ?>"/>
+    <input type="submit" value="Done"/>
+</form>
+
+//validate.php
+<?php
+$flavors = array( 'Vanilla','Chocolate','Rhinoceros' );
+$defaults = array(
+	'name' => '',
+	'age' => '',
+	'flavor' => array()
+);
+foreach ( $flavors as $flavor ) {
+	$defaults['flavor'][ $flavor ] = '';
+}
+if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
+	$errors = array();
+	include __DIR__ . '/show-form.php';
+} else {
+	if ( count( $errors ) ) {
+		if ( isset( $_POST['name'] ) ) {
+			$defaults['name'] = $_POST['name'];
+		}
+		if ( isset( $_POST['age'] ) ) {
+			$defaults['age'] = 'checked="checked"';
+		}
+		foreach ( $flavors as $flavor ) {
+			if ( isset( $_POST['flavor'] ) && ( $_POST['flavor'] == $flavor ) ) {
+				$defaults['flavor'][ $flavor ] = 'selected="selected"';
+			}
+		}
+		include __DIR__ . '/show-form.php';
+	} else {
+		print 'The form is submitted!';
+	}
+}
+?>
