@@ -6,7 +6,7 @@
 	<input type="submit" name="Submit">
 </form>
 <?php
-if( $_SERVER['REQUEST_METHOD'] == 'POST') {
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	if ( ! checkdate( $_POST['month'], $_POST['day'], $_POST['year'] ) ) {
 		print 'The date you entered does not exist!';
 	} else {

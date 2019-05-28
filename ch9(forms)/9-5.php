@@ -1,11 +1,11 @@
 <form method="post">
-    What is your favourite ice cream flavor?
-    <input type="text" name="flavor" />
-    <br><br>
-    What is your favourite color?
-    <input type="text" name="color" />
-    <br>
-    <input type="submit" value="Submit" />
+	What is your favourite ice cream flavor?
+	<input type="text" name="flavor" />
+	<br><br>
+	What is your favourite color?
+	<input type="text" name="color" />
+	<br>
+	<input type="submit" value="Submit" />
 </form>
 <?php
 if ( ! ( filter_has_var( INPUT_POST, 'flavor' ) && ( strlen( filter_input( INPUT_POST, 'flavor' ) ) > 0 ) ) ) {

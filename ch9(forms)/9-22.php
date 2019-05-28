@@ -4,7 +4,7 @@ $defaults = array(
 	'name' => '',
 	'age' => '',
 	'flavor' => array()
-	);
+);
 foreach ( $flavors as $flavor ) {
 	$defaults['flavor'][ $flavor ] = '';
  }
