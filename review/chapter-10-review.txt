@@ -1,0 +1,67 @@
+//10-17.php
+line 10
+	print $row[ 0 ] . '<br>';
+	↓
+	print $row[0] . '<br>';
+
+//10-27.php
+line 9
+	print implode( ',',$row ). '<br>';
+	↓
+	print implode( ',', $row ). '<br>';
+
+//10-31.php
+line 17
+	$st = $db->prepare( "INSERT INTO zodiac ( ' . implode( ',', $fields ) . " ) VALUES ( ' . implode( ',', $placeholders ) . ' )' );
+	↓
+	$st = $db->prepare( 'INSERT INTO zodiac ( ' . implode( ',', $fields ) . ' ) VALUES ( ' . implode( ',', $placeholders ) . ' )' );
+
+//10-32.php
+line 10 -> You use onlye sigle quote(') or double (")
+
+//10-34.php
+line 38 to 39 
+	} catch ( Exception $e ) {
+		print 'Couldnot add info: ' . htmlentities( $e->getMessage() ); }
+	↓	
+	} catch ( Exception $e ) {
+		print 'Couldnot add info: ' . htmlentities( $e->getMessage() );
+	}
+
+//buildquery.php
+line 3 -> move one tab
+line 21 -> move one tab
+line 22 -> move one tab
+
+//database.php
+line 19 to 35 -> change space to tab in front of this line
+
+line 36 to 37
+		}
+	catch ( PDOException $e ) {
+		↓
+		} catch ( PDOException $e ) {
+
+line 38 -> change space to tab in front of this line
+
+//db.php
+line 15 to 18 -> Please back one tab in front of this line ( select this line and press
+                 Shift+tab )
+
+//dbConnect.php
+line 15 -> Please back one tab in front of this line ( select this line and press
+           Shift+tab )
+
+//deleteData.php
+line 9
+	$sql = "DELETE FROM MyGuests WHERE id=4";
+	↓
+	$sql = "DELETE FROM MyGuests WHERE id = 4";
+
+//updateData.php
+ - change space to tab in front of this line
+
+ line 9 
+ 	$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+ 	↓
+ 	$sql = "UPDATE MyGuests SET lastname = 'Doe' WHERE id = 2";
