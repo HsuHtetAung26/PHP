@@ -1,0 +1,34 @@
+//11-1.php
+
+		} catch ( PDOException $e )  {
+↓
+		} catch ( PDOException $e ) {
+
+		$sth->execute(array( $session_id ) );
+↓
+		$sth->execute( array( $session_id ) );
+
+		} 
+↓
+		}
+
+		session_id VARCHAR(64) NOT NULL, 
+↓
+		session_id VARCHAR(64) NOT NULL,
+
+} }
+↓
+	}
+}
+
+//11-2.php
+
+		$data = shmop_read(	$shm, 0, $size );
+
+		$data = shmop_read( $shm, 0, $size );
+
+	return $shm;
+↓
+		return $shm;
+
+// Write comments for functions
