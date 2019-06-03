@@ -14,6 +14,6 @@ $values = array();
 foreach ( $fields as $field ) {
 	$placeholders[] = '?';
 }
-$st = $db->prepare( "INSERT INTO zodiac ( ' . implode( ',', $fields ) . " ) VALUES ( ' . implode( ',', $placeholders ) . ' )' );
+$st = $db->prepare( "INSERT INTO zodiac ( ' . implode( ',', $fields ) . ' ) VALUES ( ' . implode( ',', $placeholders ) . ' )' );
 $st->execute( $values );
 ?>

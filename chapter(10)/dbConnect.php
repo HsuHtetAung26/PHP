@@ -12,7 +12,7 @@ try {
 		lastname VARCHAR(30) NOT NULL,
 		email VARCHAR(50),
 		reg_date TIMESTAMP
-		)";
+	)";
 	$conn->exec($sql);
 	echo 'Database created Successfully';
 } catch ( PDOException $e ) {

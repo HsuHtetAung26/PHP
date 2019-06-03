@@ -1,6 +1,6 @@
 <?php
 function build_query( $db, $key_field, $fields, $table ) {
-$values = array();
+	$values = array();
 	if ( ! empty( $_POST[ $key_field ] ) ) {
 		$update_fields = array();
 		foreach ( $fields as $field ) {
@@ -16,9 +16,9 @@ $values = array();
 			$placeholders[] = '?';
 			$values[] = $_POST[ $field ];
 		}
-		$st = $db->prepare( "INSERT INTO $table ( $key_field," . implode( ',', $fields ) . ') VALUES ('. implode(',',$placeholders ) .')' );
+		$st = $db->prepare( "INSERT INTO $table ( $key_field," . implode( ',', $fields ) . ') VALUES (' . implode( ',', $placeholders ) . ')' );
 	}
-$st->execute( $values );
-return $st;
+	$st->execute( $values );
+	return $st;
 }
 ?>
