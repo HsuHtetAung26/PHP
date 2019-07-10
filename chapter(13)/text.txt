@@ -1,0 +1,1 @@
+Tidy is a quite powerful program which main purpose is to fix errors in HTML documents. TidyLib is a library version of Tidy written in C and by reason of easy C linkage, it can be used from within nearly any programming language, including PHP.
