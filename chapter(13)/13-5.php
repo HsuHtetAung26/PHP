@@ -16,7 +16,7 @@ $doc->loadXml( $xhtml );
 $body = $doc->getElementsByTagName('body')->item(0);
 $xpath = new DOMXpath( $doc );
 foreach ( $xpath->query( "descendant-or-self::text()", $body ) as $textNode ) {
-$replaced = preg_replace( $patterns, $replacements, $textNode->wholeText );
+	$replaced = preg_replace( $patterns, $replacements, $textNode->wholeText );
 	if ( $replaced !== $textNode->wholeText ) {
 		$fragment = $textNode->ownerDocument->createDocumentFragment();
 		$fragment->appendXml( $replaced );

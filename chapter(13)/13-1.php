@@ -10,10 +10,10 @@ foreach ( $words as $i => $word ) {
 }
 $parts = preg_split( "{(<(?:\"[^\"]*\"|'[^']*'|[^'\">])*>)}", $body, -1, PREG_SPLIT_DELIM_CAPTURE ); 
 foreach ( $parts as $i => $part ) {
-	if ( isset( $part[0]) && ( $part[0] == '<' ) ) {
+	if ( isset( $part[0] ) && ( $part[0] == '<' ) ) {
 		continue;
 	}
-$parts[ $i ] = str_replace( $words, $replacements, $part );
+	$parts[ $i ] = str_replace( $words, $replacements, $part );
 }
 $body = implode( '', $parts );
 print $body;

@@ -14,9 +14,9 @@ foreach ( $links as $link ) {
 function pc_link_extractor( $html ) {
 	$links = array();
 	preg_match_all( '/<a\s+.*?href=[\"\']?([^\"\' >]*)[\"\']?[^>]*>(.*?)<\/a>/i', $html, $matches, PREG_SET_ORDER );
-	foreach( $matches as $match ) {
+	foreach ( $matches as $match ) {
 		$links[] = array( $match[1], $match[2] );
 	}
-return $links;
+	return $links;
 }
 ?>
