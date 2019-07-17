@@ -13,6 +13,6 @@ switch( $method ) {
 		delete_book( $request );
 		break;
 	default:
-		http_response_code( 405 );
+		http_response_code(405);
 }
 ?>

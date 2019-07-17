@@ -7,7 +7,7 @@ $error_body = [
 	"url" => "http://developer.example.com/error/1"
 ];
 print json_encode( $error_body );
-http_response_code(503); 
+http_response_code(503);
 $error_body = [
 	"error" => "Down for maintenance",
 	"code" => 2,
