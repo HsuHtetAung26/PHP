@@ -39,7 +39,7 @@ function bar_chart( $question, $answers ) {
 			ImageString( $image, 2, $x, $y, $line, $black );
 			$y += 12;
 		}
-		$y+=7;
+		$y += 7;
 	}
 	$chart = ImageCreateTrueColor( 150, $y );
 	ImageCopy($chart, $image, 0, 0, 0, 0, 150, $y);

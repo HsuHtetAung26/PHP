@@ -7,5 +7,6 @@ function ImageFTCenter( $image, $size, $angle, $font, $text, $extrainfo = array(
 	$yr = abs( max( $box[5], $box[7] ) );
 	$x = intval( ( $xi - $xr ) / 2 );
 	$y = intval( ( $yi + $yr ) / 2 );
-return array( $x, $y ); }
+	return array( $x, $y );
+}
 ?>
